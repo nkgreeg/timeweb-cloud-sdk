@@ -1,0 +1,45 @@
+{
+  "name": "timeweb-cloud-sdk",
+  "version": "1.0.0",
+  "desctioption": "TimeWeb Cloud API SDK created by OpenAPI Generator",
+  "main": "build/index.js",
+  "scripts": {
+    "download": "ts-node scripts/download",
+    "gen": "ts-node scripts/gen",
+    "build": "tsc --build .",
+    "prepublishOnly": "tsc --build ."
+  },
+  "repository": "https://github.com/nkgreeg/timeweb-cloud-sdk",
+  "author": "@nkgreeg",
+  "license": "GPL-3.0",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "files": [
+    "build/",
+    "src/",
+    "LICENSE",
+    "package.json",
+    "README.md",
+    "tsconfig.json",
+    "yarn.lock"
+  ],
+  "keywords": [
+    "TimeWeb",
+    "API",
+    "SDK",
+    "Tool",
+    "OpenAPI",
+    "TypeScript"
+  ],
+  "devDependencies": {
+    "@types/node": "^20.11.10",
+    "glob": "^10.3.10",
+    "openapi-typescript-codegen": "^0.27.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "axios": "^1.6.7"
+  }
+}
