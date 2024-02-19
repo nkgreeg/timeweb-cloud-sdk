@@ -1,6 +1,6 @@
 {
   "name": "timeweb-cloud-sdk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "desctioption": "TimeWeb Cloud API SDK created by OpenAPI Generator",
   "main": "build/index.js",
   "scripts": {
