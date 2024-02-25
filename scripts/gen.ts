@@ -24,28 +24,28 @@ function generate (): void {
 
 function fixIndex (): void {
   const file = path.resolve(SRC_DIRECTORY, `index.ts`)
-  let text = fs.readFileSync(file, 'utf8')
-  text = text.replace(`export { mailbox } from './models/mailbox';\n`, '')
-  text = text.replace(`export { domain } from './models/domain';\n`, '')
-  text = text.replace(`export type { meta } from './models/meta';\n`, '')
-  fs.writeFileSync(file, text)
+  fs.writeFileSync(file, fs.readFileSync(file, 'utf8')
+    .replace(`export { mailbox } from './models/mailbox';\n`, '')
+    .replace(`export { domain } from './models/domain';\n`, '')
+    .replace(`export type { meta } from './models/meta';\n`, '')
+  )
 }
 
 function fixMainClass (): void {
   const file = path.resolve(SRC_DIRECTORY, `${NAME}.ts`)
-  let text = fs.readFileSync(file, 'utf8')
-  text = text.replace('readonly : Service', 'readonly service: Service')
-  text = text.replace('this. = new Service', 'this.service = new Service')
-  fs.writeFileSync(file, text)
+  fs.writeFileSync(file, fs.readFileSync(file, 'utf8')
+    .replace('readonly : Service', 'readonly service: Service')
+    .replace('this. = new Service', 'this.service = new Service')
+  )
 }
 
 function fixServices (): void {
   const files = globSync(`${SRC_DIRECTORY}/services/*.ts`)
   for (const file of files) {
-    let text = fs.readFileSync(file, 'utf8')
-    text = text.replace(`type { meta } from '../models/meta'`, `type { Meta } from '../models/Meta'`)
-    text = text.replaceAll(`meta: meta`, `meta: Meta`)
-    fs.writeFileSync(file, text)
+    fs.writeFileSync(file, fs.readFileSync(file, 'utf8')
+      .replace(`type { meta } from '../models/meta'`, `type { Meta } from '../models/Meta'`)
+      .replaceAll(`meta: meta`, `meta: Meta`)
+    )
   }
 }
 
