@@ -16,4 +16,5 @@ export enum db_type {
     OPENSEARCH = 'opensearch',
     KAFKA = 'kafka',
     RABBITMQ = 'rabbitmq',
+    CLICKHOUSE = 'clickhouse',
 }

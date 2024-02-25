@@ -28234,7 +28234,8 @@
           "mongodb",
           "opensearch",
           "kafka",
-          "rabbitmq"
+          "rabbitmq",
+          "clickhouse"
         ],
         "example": "mysql"
       },
@@ -28555,6 +28556,7 @@
           },
           "admin": {
             "type": "object",
+            "description": "Пользователь базы данных.",
             "properties": {
               "login": {
                 "type": "string",

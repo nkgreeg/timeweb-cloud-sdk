@@ -12,6 +12,9 @@ export type create_cluster = {
      */
     name: string;
     type: db_type;
+    /**
+     * Пользователь базы данных.
+     */
     admin?: {
         /**
          * Имя пользователя базы данных
