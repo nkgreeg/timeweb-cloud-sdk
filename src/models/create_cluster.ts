@@ -4,6 +4,7 @@
 /* eslint-disable */
 import type { availability_zone } from './availability_zone';
 import type { config_parameters } from './config_parameters';
+import type { create_db_auto_backups } from './create_db_auto_backups';
 import type { db_type } from './db_type';
 import type { network } from './network';
 export type create_cluster = {
@@ -65,6 +66,7 @@ export type create_cluster = {
      */
     description?: string;
     availability_zone?: availability_zone;
+    auto_backups?: create_db_auto_backups;
 };
 export namespace create_cluster {
     /**

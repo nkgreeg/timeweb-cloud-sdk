@@ -43,6 +43,7 @@ export type { create_api_key } from './models/create_api_key';
 export { create_balancer } from './models/create_balancer';
 export { create_cluster } from './models/create_cluster';
 export { create_db } from './models/create_db';
+export { create_db_auto_backups } from './models/create_db_auto_backups';
 export type { create_dedicated_server } from './models/create_dedicated_server';
 export { create_dns } from './models/create_dns';
 export type { create_floating_ip } from './models/create_floating_ip';

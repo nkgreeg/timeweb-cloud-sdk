@@ -28544,6 +28544,44 @@
           "networks"
         ]
       },
+      "create-db-auto-backups": {
+        "description": "База данных",
+        "type": "object",
+        "properties": {
+          "copy_count": {
+            "type": "number",
+            "description": "Количество копий для хранения. Минимальное количество `1`, максимальное `99`",
+            "example": 2
+          },
+          "creation_start_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Дата начала создания первого автобэкапа. Значение в формате `ISO8601`. Время не учитывается.",
+            "example": "2023-02-02T00:00:00.000Z"
+          },
+          "interval": {
+            "type": "string",
+            "enum": [
+              "day",
+              "week",
+              "month"
+            ],
+            "description": "Периодичность создания автобэкапов",
+            "example": "week"
+          },
+          "day_of_week": {
+            "type": "number",
+            "description": "День недели, в который будут создаваться автобэкапы. Работает только со значением `interval`: `week`. Доступные значение от `1 `до `7`.",
+            "example": 1
+          }
+        },
+        "required": [
+          "copy_count",
+          "creation_start_at",
+          "interval",
+          "day_of_week"
+        ]
+      },
       "create-cluster": {
         "properties": {
           "name": {
@@ -28653,6 +28691,9 @@
           },
           "availability_zone": {
             "$ref": "#/components/schemas/availability-zone"
+          },
+          "auto_backups": {
+            "$ref": "#/components/schemas/create-db-auto-backups"
           }
         },
         "type": "object",
